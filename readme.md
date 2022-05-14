@@ -1,12 +1,12 @@
 ## Kurulum
-Terminale ```bash
+Terminale ```
 npm i```
  yazıp modüllerin indirilmesini bekleyin. 
 <br>
 <br> 
-modüller indirildikten sonra eğer test botunu çalıştırmak isterseniz ```bash
+modüller indirildikten sonra eğer test botunu çalıştırmak isterseniz ```
 npm test```
- yazın eğer ana botu çalıştırmak isterseniz ```bash
+ yazın eğer ana botu çalıştırmak isterseniz ```
 npm start```
  yazınız.
 
