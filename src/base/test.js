@@ -29,6 +29,8 @@ module.exports = (client) => {
     const filePath = path.join(commandsPath, file);
     const command = require(filePath);
     if(command.slash) {
+      client.slashcommands = new Collection();
+      client.slashcommands.set(command.name[0], command)
       const slashCommand = new SlashCommandBuilder()
       .setName(command.name[0])
       .setDescription(command.description)
