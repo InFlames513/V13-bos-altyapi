@@ -14,10 +14,10 @@ npm start```
 Botun yapılması gerek tüm ayarlarını `src/bash/settings.json` dosyasından yapabilirsiniz.
 <br>
 Eğer test botu eklemek istemiyorsanız test.js isimli dosyaları silebilir ve settings.jsonu <p> ```json
-{
-    "prefix": ".",
-    "botid": "bot_id",
-    "token": "token"
+{ <br>
+    "prefix": ".", <br>
+    "botid": "bot_id", <br>
+    "token": "token" <br>
 }```<p>
 bu şekilde yeniden düzenleyebilirsiniz.<br>
 <br>
