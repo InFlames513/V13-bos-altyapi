@@ -1,0 +1,7 @@
+{
+    "prefix": ".",
+    "botid": "bot_id",
+    "token": "token",
+    "testBotid": "test_botu_id",
+    "testToken": "test_botu_token"
+}

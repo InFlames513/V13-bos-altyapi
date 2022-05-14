@@ -1,0 +1,17 @@
+{
+  "name": "covid-v13",
+  "version": "0.0.1",
+  "description": "Covid-19 code sunucusuna ait v13 altyapı",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "author": "InFlames#2005",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^0.4.1",
+    "discord.js": "^13.7.0",
+    "inflames.db": "^2.5.3"
+  }
+}
