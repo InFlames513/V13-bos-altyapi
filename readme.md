@@ -1,24 +1,24 @@
 ## Kurulum
 Terminale ```bash
-npm i ```
-yazıp modüllerin indirilmesini bekleyin. 
+npm i```
+ yazıp modüllerin indirilmesini bekleyin. 
 <br>
 <br> 
 modüller indirildikten sonra eğer test botunu çalıştırmak isterseniz ```bash
-npm test ```
-yazın eğer ana botu çalıştırmak isterseniz ```bash
-npm start ```
-yazınız.
+npm test```
+ yazın eğer ana botu çalıştırmak isterseniz ```bash
+npm start```
+ yazınız.
 
 ## Ayarlar
 Botun yapılması gerek tüm ayarlarını `src/bash/settings.json` dosyasından yapabilirsiniz.
 <br>
-Eğer test botu eklemek istemiyorsanız test.js isimli dosyaları silebilir ve settings.jsonu ```json
+Eğer test botu eklemek istemiyorsanız test.js isimli dosyaları silebilir ve settings.jsonu <br> ```json
 {
     "prefix": ".",
     "botid": "bot_id",
     "token": "token"
-}```
+}```<br>
 bu şekilde yeniden düzenleyebilirsiniz.<br>
 <br>
 Discord sunucumuz'a katılmayı ve projeye star atmayı unutmayın 👋
