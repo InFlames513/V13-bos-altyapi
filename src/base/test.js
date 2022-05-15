@@ -14,46 +14,45 @@ const eventFiles = fs.readdirSync(eventsPath).filter((file) => file.endsWith(".j
 const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith(".js"));
 
 module.exports = (client) => {
+  client.commands = new Collection();
+  client.slashcommands = new Collection();
+    for (const file of eventFiles) {
+      const filePath = path.join(eventsPath, file);
+      const event = require(filePath);
+      if (event.once) {
+        client.once(event.name, (...args) => event.execute(...args, client));
+      } else {
+        client.on(event.name, (...args) => event.execute(...args, client));
+      }
+    };
 
-  for (const file of eventFiles) {
-    const filePath = path.join(eventsPath, file);
-    const event = require(filePath);
-    if (event.once) {
-      client.once(event.name, (...args) => event.execute(...args, client));
-    } else {
-      client.on(event.name, (...args) => event.execute(...args, client));
-    }
-  };
-
-  for (const file of commandFiles) {
-    const filePath = path.join(commandsPath, file);
-    const command = require(filePath);
-    if(command.slash) {
-      client.slashcommands = new Collection();
-      client.slashcommands.set(command.name[0], command)
-      const slashCommand = new SlashCommandBuilder()
-      .setName(command.name[0])
-      .setDescription(command.description)
-      if(command.option) {
-        for(i = 0; i < command.option.length; i++) {
-          if(command.option[i].type === 'string') slashCommand.addStringOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'integer') slashCommand.addIntegerOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'number') slashCommand.addNumberOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'boolean') slashCommand.addBooleanOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'user') slashCommand.addUserOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'channel') slashCommand.addChannelOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'role') slashCommand.addRoleOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-          if(command.option[i].type === 'mentionable') slashCommand.addSMentionableOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+    for (const file of commandFiles) {
+      const filePath = path.join(commandsPath, file);
+      const command = require(filePath);
+      if(command.slash) {
+        client.slashcommands.set(command.name[0], command)
+        const slashCommand = new SlashCommandBuilder()
+        .setName(command.name[0])
+        .setDescription(command.description)
+        if(command.option) {
+          for(i = 0; i < command.option.length; i++) {
+            if(command.option[i].type === 'string') slashCommand.addStringOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'integer') slashCommand.addIntegerOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'number') slashCommand.addNumberOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'boolean') slashCommand.addBooleanOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'user') slashCommand.addUserOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'channel') slashCommand.addChannelOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'role') slashCommand.addRoleOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'mentionable') slashCommand.addSMentionableOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+          }
         }
+        commands.push(slashCommand)
       }
-      commands.push(slashCommand)
-    }
-    if(!command.slash) {
-      client.commands = new Collection();
-      for(i = 0; i < command.name.length; i++) {
-        client.commands.set(command.name[i], command);
-      }
-    } 
+      if(!command.slash) {
+        for(i = 0; i < command.name.length; i++) {
+          client.commands.set(command.name[i], command);
+        }
+      } 
     }
 };
 
