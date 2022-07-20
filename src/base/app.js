@@ -43,7 +43,7 @@ module.exports = (client) => {
             if(command.option[i].type === 'user') slashCommand.addUserOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
             if(command.option[i].type === 'channel') slashCommand.addChannelOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
             if(command.option[i].type === 'role') slashCommand.addRoleOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-            if(command.option[i].type === 'mentionable') slashCommand.addSMentionableOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
+            if(command.option[i].type === 'mentionable') slashCommand.addMentionableOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
           }
         }
         commands.push(slashCommand)
