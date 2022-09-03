@@ -1,5 +1,5 @@
 ## Kurulum
-Terminale ```bash
+Terminale ```
 npm i```
  yazıp modüllerin indirilmesini bekleyin. 
 <br>
