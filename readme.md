@@ -1,12 +1,12 @@
 ## Kurulum
-Terminale ```
+Terminale ```bash
 npm i```
  yazıp modüllerin indirilmesini bekleyin. 
 <br>
 <br> 
-modüller indirildikten sonra eğer test botunu çalıştırmak isterseniz ```
+modüller indirildikten sonra eğer test botunu çalıştırmak isterseniz ```bash
 npm test```
- yazın eğer ana botu çalıştırmak isterseniz ```
+ yazın eğer ana botu çalıştırmak isterseniz ```bash
 npm start```
  yazınız.
 
@@ -20,6 +20,7 @@ Eğer test botu eklemek istemiyorsanız test.js isimli dosyaları silebilir ve s
     "botid": "bot_id",
     "token": "token" 
 }```
+<br>
 bu şekilde yeniden düzenleyebilirsiniz.<br>
 <br>
 Discord sunucumuz'a katılmayı ve projeye star atmayı unutmayın 👋
