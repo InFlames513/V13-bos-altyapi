@@ -16,9 +16,9 @@ Botun yapılması gerek tüm ayarlarını `src/bash/settings.json` dosyasından 
 Eğer test botu eklemek istemiyorsanız test.js isimli dosyaları silebilir ve settings.json'u <br>
 ```json
 {
-    "prefix": ".", <br>
-    "botid": "bot_id", <br>
-    "token": "token" <br>
+    "prefix": ".",
+    "botid": "bot_id",
+    "token": "token" 
 }```
 bu şekilde yeniden düzenleyebilirsiniz.<br>
 <br>
