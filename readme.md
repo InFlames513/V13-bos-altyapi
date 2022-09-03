@@ -19,8 +19,8 @@ Eğer test botu eklemek istemiyorsanız test.js isimli dosyaları silebilir ve s
     "prefix": ".",
     "botid": "bot_id",
     "token": "token" 
-}```
-<br>
+}
+```
 bu şekilde yeniden düzenleyebilirsiniz.<br>
 <br>
 Discord sunucumuz'a katılmayı ve projeye star atmayı unutmayın 👋
