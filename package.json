@@ -12,6 +12,6 @@
   "dependencies": {
     "@discordjs/rest": "^0.4.1",
     "discord.js": "^13.7.0",
-    "inflames.db": "^2.5.3"
+    "inflames.db": "^4.1.1"
   }
 }
